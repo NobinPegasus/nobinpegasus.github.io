@@ -131,6 +131,10 @@ const _Portfolio: React.FC = () => (
       <a href="https://ashfurrow.com/blog/open-source-ideology/">
         fairly radical openness
       </a>
+      <br/>
+        <a href={`/resume.pdf`} target="_blank" rel="noreferrer" id="email">
+            resume
+        </a>
       : I believe that unless there is a good reason to keep something secret,
       then it should be shared. Artsy called it &ldquo;open source by
       default.&rdquo; Teehan+Lax called it &ldquo;creating more value than you
@@ -379,7 +383,7 @@ const _Portfolio: React.FC = () => (
           .
         </p>
       </LeftDiv>
-      <h3>Speaking</h3>
+      <h3>Credits</h3>
       <RightImage src="/assets/portfolio/speaking.jpg" />
       <LeftDiv>
         <p>
@@ -388,9 +392,7 @@ const _Portfolio: React.FC = () => (
           the world on a variety of subjects relating to software development,
           team development, and open source software.
         </p>
-        <p>
-          Check out my <a href="/speaking">speaking page</a> for more.
-        </p>
+
       </LeftDiv>
       <h3>Books</h3>
       <RightImage src="/assets/portfolio/books.jpg" />

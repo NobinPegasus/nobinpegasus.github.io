@@ -243,75 +243,8 @@ export const Layout = (props: React.PropsWithChildren<{}>) => {
         <Navbar menuIsOpen={navBarOpen} toggleMenuOpen={toggleMenuOpen} />
         <GlobalStyle />
         {children}
-        <Footer>
-          <hr />
-          <FooterIcons>
-            <span className="fa-layers fa-fw fa-3x">
-              <FooterLink
-                href="https://masto.ashfurrow.com/@ashfurrow"
-                title="Mastodon"
-                rel="me"
-              >
-                <FontAwesomeIcon
-                  icon={faMastodon}
-                  transform="shrink-8"
-                  mask={faCircle}
-                />
-              </FooterLink>
-            </span>
-            <span className="fa-layers fa-fw fa-3x">
-              <FooterLink
-                href="https://twitter.com/ashfurrow"
-                title="Twitter"
-                rel="me"
-              >
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  transform="shrink-8"
-                  mask={faCircle}
-                />
-              </FooterLink>
-            </span>
-            <span className="fa-layers fa-fw fa-3x">
-              <FooterLink
-                href="https://github.com/ashfurrow"
-                title="GitHub"
-                rel="me"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  transform="shrink-8"
-                  mask={faCircle}
-                />
-              </FooterLink>
-            </span>
-            <span className="fa-layers fa-fw fa-3x">
-              <FooterLink
-                href="https://photos.ashfurrow.com"
-                title="Photo Blog"
-                rel="me"
-              >
-                <FontAwesomeIcon
-                  icon={faImage}
-                  transform="shrink-8"
-                  mask={faCircle}
-                />
-              </FooterLink>
-            </span>
-            <span className="fa-layers fa-fw fa-3x">
-              <FooterLink
-                href="http://instagram.com/ashfurrow"
-                title="Instagram"
-                rel="me"
-              >
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  transform="shrink-8"
-                  mask={faCircle}
-                />
-              </FooterLink>
-            </span>
-          </FooterIcons>
+        {/* <Footer>
+          
           <span style={{ fontSize: '0.75rem' }}>
             This site is{' '}
             <a href="http://github.com/ashfurrow/blog">open source</a>.{' '}
@@ -322,7 +255,7 @@ export const Layout = (props: React.PropsWithChildren<{}>) => {
             </a>
             .
           </span>
-        </Footer>
+        </Footer> */}
       </React.Fragment>
     </ThemeProvider>
   )

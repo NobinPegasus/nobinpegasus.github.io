@@ -38,15 +38,16 @@ export const Navbar = (props: Props) => {
           <Link
             to="/"
             style={{
-              height: '1.5rem',
+              height: '4.2rem',
+              padding: '1.0rem',
               margin: '0.5rem 0'
             }}
           >
             <Image
               src={
                 transparent
-                  ? '/assets/siteimage.png'
-                  : '/assets/siteimage_dark.png'
+                  ? '/assets/home-white.png'
+                  : '/assets/home.png'
               }
             />
           </Link>
@@ -58,13 +59,15 @@ export const Navbar = (props: Props) => {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/books">Books</Link>
+              <Link to="/resume">
+                Resume
+              </Link>
             </li>
             <li>
-              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/speaking">Speaking</Link>
+              <Link to="/credits">Credits</Link>
             </li>
             <li>
               <a href="/search">
