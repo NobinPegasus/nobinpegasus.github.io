@@ -69,3 +69,9 @@ export const Tweet: React.FC<{ tweetID: string }> = ({ tweetID }) => (
     <TwitterTweetEmbed tweetId={tweetID} />
   </Narrow>
 )
+
+
+function sendEmail() {
+  const email = 'your.email@gmail.com';
+  window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+}

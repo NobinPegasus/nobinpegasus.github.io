@@ -8,6 +8,7 @@ import config from 'config/siteConfig'
 import Data from 'models/Data'
 import styled from 'styled-components'
 import { FeaturedPosts } from 'components/FeaturedPost'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 interface Props {
   data: Data
@@ -29,24 +30,21 @@ const HomePage = (props: Props) => {
       </Header>
       <Wrapper>
         <Content>
-          <h2 style={{ marginBottom: '1rem' }}>Get Started Here</h2>
-          <FeaturedPosts />
-          <h2 style={{ marginBottom: '1rem' }}>Recent Posts</h2>
-          <ol style={{ margin: 0 }}>
-            {edges.map((post) => (
+         {edges.map((post) => (
               <li
                 key={post.node.frontmatter.title}
                 style={{ listStyleType: 'none', margin: 0 }}
               >
-                <Link to={post.node.fields.path}>
-                  <Title>{post.node.frontmatter.title}</Title>
+
                   <DateTag dateTime={post.node.frontmatter.standardDate}>
-                    {post.node.frontmatter.date}
+                    <p>{post.node.frontmatter.date}</p>
+                    <MDXRenderer>{post.node.body}</MDXRenderer>
                   </DateTag>
-                </Link>
+
+                
               </li>
+              
             ))}
-          </ol>
         </Content>
       </Wrapper>
     </Layout>
@@ -56,29 +54,51 @@ const HomePage = (props: Props) => {
 // eslint-disable-next-line import/no-default-export
 export default HomePage
 
+// export const query = graphql`
+//   query {
+//     allMdx(
+//       sort: { fields: [frontmatter___date, frontmatter___title], order: DESC }
+//       limit: 10
+//     ) {
+//       totalCount
+//       edges {
+//         node {
+//           fields {
+//             path
+//           }
+//           frontmatter {
+//             title
+//             date(formatString: "MMMM D, YYYY")
+//             standardDate: date(formatString: "YYYY-MM-DD")
+//           }
+//           excerpt(pruneLength: 200)
+//           timeToRead
+//         }
+//       }
+//     }
+//   }
+// `
 export const query = graphql`
-  query {
-    allMdx(
-      sort: { fields: [frontmatter___date, frontmatter___title], order: DESC }
-      limit: 10
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            path
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM D, YYYY")
-            standardDate: date(formatString: "YYYY-MM-DD")
-          }
-          excerpt(pruneLength: 200)
-          timeToRead
+query {
+  allMdx(filter: {id: {eq: "73ae7366-070f-57a2-bd4e-b99547c10bb4"}}) {
+    edges {
+      node {
+        fields {
+          path
         }
+        id
+        frontmatter {
+          title
+          date(formatString: "MMMM D, YYYY")
+          standardDate: date(formatString: "YYYY-MM-DD")
+        }
+        excerpt(pruneLength: 200)
+        timeToRead
+        body
       }
     }
   }
+}
 `
 
 const Line = styled.hr`

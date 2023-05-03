@@ -5,6 +5,7 @@ import config from 'config/siteConfig'
 import { Link } from 'gatsby'
 import { topBarStyle } from './topBarStyle'
 
+
 export const CollapseMenu: React.FC<{
   menuIsOpen: boolean
   toggleMenuOpen: () => void
@@ -25,18 +26,18 @@ export const CollapseMenu: React.FC<{
               </Link>
             </li>
             <li>
-              <Link to="/books" onClick={toggleMenuOpen}>
-                Books
+              <Link to="/resume" onClick={toggleMenuOpen}>
+                Resume
               </Link>
             </li>
             <li>
-              <Link to="/portfolio" onClick={toggleMenuOpen}>
-                Portfolio
+              <Link to="/contact" onClick={toggleMenuOpen}>
+                Contact
               </Link>
             </li>
             <li>
-              <Link to="/speaking" onClick={toggleMenuOpen}>
-                Speaking
+              <Link to="/credits" onClick={toggleMenuOpen}>
+                Credits
               </Link>
             </li>
             <li>

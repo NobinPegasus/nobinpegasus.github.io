@@ -87,6 +87,11 @@ const gatsbyRemarkPlugins = [
   }
 ]
 
+
+
+
+
+
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
@@ -105,6 +110,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-lodash',
     'gatsby-plugin-root-import',
+    '@syed-ahmed/docusaurus-plugin-react-pdf',
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -171,6 +177,13 @@ module.exports = {
         path: `${__dirname}/blog`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`
+      }
+    },  
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
