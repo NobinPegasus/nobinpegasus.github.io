@@ -1,6 +1,9 @@
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
 
+[build.environment]
+  NODE_VERSION = "18.16.0"
+
 [[headers]]
   for = "/*"
   [headers.values]
