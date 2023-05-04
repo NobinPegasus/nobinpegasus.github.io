@@ -2,13 +2,14 @@
   "name": "blog",
   "description": "My blog",
   "version": "1.0.0",
-  "author": "Ash Furrow ( ash@ashfurrow.com )",
+  "author": "Zeshan Ahmed Nobin",
   "keywords": [
     "blog"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "deploy": "gatsby build && gh-pages -d public -b main",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn gatsby build --log-pages",
     "postinstall": "patch-package",
     "start": "gatsby develop",

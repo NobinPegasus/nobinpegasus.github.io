@@ -66,10 +66,9 @@ export const SEO = (props: SEOProps) => {
           url: config.siteUrl,
           image: 'https://static.ashfurrow.com/ashfurrow_thumbsup_square.jpeg',
           sameAs: [
-            'https://twitter.com/ashfurrow',
-            'https://instagram.com/ashfurrow',
-            'https://masto.ashfurrow.com/@ashfurrow',
-            'https://github.com/ashfurrow'
+            'https://twitter.com/zeshan_nobin',
+            'https://linkedin.com/zeshanahmednobin',
+            'https://github.com/nobinpegasus'
           ]
         },
         publisher: {
