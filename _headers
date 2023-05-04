@@ -276,15 +276,6 @@
   Link: </component---src-pages-about-mdx-8821b456b6b4a76c3cee.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/about/page-data.json>; rel=preload; as=fetch; crossorigin
-/credits/
-  Link: </webpack-runtime-45eb44c7ad94f6424438.js>; rel=preload; as=script
-  Link: </framework-accc1e234dcc119f9768.js>; rel=preload; as=script
-  Link: </app-b3f744595db019497fee.js>; rel=preload; as=script
-  Link: </c16184b3-d054792f97a47f36d6d9.js>; rel=preload; as=script
-  Link: </9abb93feae8bbefb1607eb0fc98c5f7f24dcbbd4-b99709fb32d105515724.js>; rel=preload; as=script
-  Link: </component---src-pages-credits-mdx-5b7558f70fe10ffcb2c0.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/credits/page-data.json>; rel=preload; as=fetch; crossorigin
 /uicollectionview-the-complete-guide/
   Link: </webpack-runtime-45eb44c7ad94f6424438.js>; rel=preload; as=script
   Link: </framework-accc1e234dcc119f9768.js>; rel=preload; as=script
@@ -294,3 +285,12 @@
   Link: </component---src-pages-uicollectionview-the-complete-guide-mdx-e16daefb42f9cbf5b0e9.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/uicollectionview-the-complete-guide/page-data.json>; rel=preload; as=fetch; crossorigin
+/credits/
+  Link: </webpack-runtime-45eb44c7ad94f6424438.js>; rel=preload; as=script
+  Link: </framework-accc1e234dcc119f9768.js>; rel=preload; as=script
+  Link: </app-b3f744595db019497fee.js>; rel=preload; as=script
+  Link: </c16184b3-d054792f97a47f36d6d9.js>; rel=preload; as=script
+  Link: </9abb93feae8bbefb1607eb0fc98c5f7f24dcbbd4-b99709fb32d105515724.js>; rel=preload; as=script
+  Link: </component---src-pages-credits-mdx-5b7558f70fe10ffcb2c0.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/credits/page-data.json>; rel=preload; as=fetch; crossorigin
