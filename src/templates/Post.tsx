@@ -148,9 +148,6 @@ export const postQuery = graphql`
           publicURL
         }
         bannerAttribution
-        socialImage {
-          publicURL
-        }
       }
       excerpt(pruneLength: 320)
       timeToRead
