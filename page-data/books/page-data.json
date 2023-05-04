@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-books-mdx","path":"/books/","result":{"pageContext":{"frontmatter":{"title":"Books","banner":"/assets/bg/books.jpg"}}},"staticQueryHashes":[]}
+{
+    "componentChunkName": "component---src-pages-books-mdx",
+    "path": "/books/",
+    "result": {"pageContext":{"frontmatter":{"title":"Books","banner":"/assets/bg/books.jpg"}}},
+    "staticQueryHashes": []}

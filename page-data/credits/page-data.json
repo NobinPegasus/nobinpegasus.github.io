@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-credits-mdx","path":"/credits/","result":{"pageContext":{"frontmatter":{"title":"Credits","banner":"/assets/contact3.jpg"}}},"staticQueryHashes":[]}
+{
+    "componentChunkName": "component---src-pages-credits-mdx",
+    "path": "/credits/",
+    "result": {"pageContext":{"frontmatter":{"title":"Credits","banner":"/assets/contact3.jpg"}}},
+    "staticQueryHashes": []}
