@@ -9,6 +9,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "deploy": "gatsby build && gh-pages -d public -b main",
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn gatsby build --log-pages",
     "postinstall": "patch-package",
     "start": "gatsby develop",
@@ -113,6 +114,7 @@
     "gatsby-remark-smartypants": "^5.10.0",
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-remark": "^5.10.1",
+    "gh-pages": "^5.0.0",
     "husky": "^7.0.4",
     "inflected": "^2.1.0",
     "lint-staged": "^12.3.7",
