@@ -3,7 +3,9 @@ interface Frontmatter {
   formattedDate?: string
   standardDate?: string
   title: string
-  banner: string
+  banner?: {
+    publicURL: string
+  }
   bannerAttribution?: string
   socialImage?: {
     publicURL: string
