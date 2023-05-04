@@ -31,6 +31,7 @@ import {
 } from 'components/Embeds'
 import { theme } from 'config/theme'
 import PageContext from 'models/PageContext'
+import sendEmail  from 'layouts/components/sendEmail'
 
 const ShortCodes = {
   Narrow,
@@ -102,8 +103,8 @@ const PostPage = (props: Props) => {
                 </MDXProvider>
               </PostContent>
               <hr style={{ margin: '0' }} />
-              <TypoLink href={post.fields.githubLink}>
-                Please submit typo corrections on GitHub
+              <TypoLink onClick={sendEmail}>
+                Please submit corrections on email
               </TypoLink>
               <PrevNext prev={prev} next={next} />
             </Content>
