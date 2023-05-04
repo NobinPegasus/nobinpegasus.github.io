@@ -64,7 +64,7 @@ const Search = () => {
     <Layout>
       <Helmet title={`Search | ${config.siteTitle}`} />
       <SEO path={'/search/'} data={{ title: 'Search' }} />
-      <Header banner="/assets/bg/search.jpg">
+      <Header banner="/assets/bg/bg3.jpg">
         <SectionTitle>Search</SectionTitle>
       </Header>
       <Wrapper>
