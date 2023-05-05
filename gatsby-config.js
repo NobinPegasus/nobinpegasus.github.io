@@ -49,7 +49,7 @@ const feedSerializer = ({ query: { site, allMdx } }) => {
 }
 
 const feedTemplate = {
-  title: "Ash Furrow's Blog",
+  title: "Zeshan Ahmed Nobin's Blog",
   match: '^/blog/',
   serialize: feedSerializer,
   query: rssQuery
