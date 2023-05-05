@@ -8,7 +8,7 @@ import Helmet from 'react-helmet'
 import config from 'config/siteConfig'
 import rgba from 'polished/lib/color/rgba'
 import { theme } from 'config/theme'
-import { Index } from 'elasticlunr'
+import elasticlunr, { Index } from 'elasticlunr'
 import styled, { keyframes } from 'styled-components'
 
 interface SearchResult {
@@ -52,7 +52,19 @@ const Search = () => {
     fetch('/siteSearchIndex.json')
       .then((result) => result.json())
       .then((indexJSON) => {
-        setIndex(Index.load(indexJSON))
+        // setIndex(Index.load(indexJSON))
+
+        const articles = indexJSON.documentStore.docs
+        elasticlunr.stopWordFilter.stopWords = {};
+        var elastic = elasticlunr(function () {
+        this.addField('title');
+        this.addField('body');
+        this.setRef('id');
+        })
+        Object.keys(articles).map(  key => elastic.addDoc(articles[key]) )
+        
+        setIndex(elastic)
+
         if (query) {
           // User has already entered text, search for it.
           search(query)
@@ -71,7 +83,7 @@ const Search = () => {
         <Content>
           <div style={{ marginTop: '1rem' }}>
             <div style={{ position: 'relative' }}>
-              <SearchInput
+            <SearchInput
                 type="text"
                 value={query}
                 onChange={handleUserInput}
