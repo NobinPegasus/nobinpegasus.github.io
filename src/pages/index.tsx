@@ -80,7 +80,7 @@ export default HomePage
 // `
 export const query = graphql`
 query {
-  allMdx(filter: {id: {eq: "73ae7366-070f-57a2-bd4e-b99547c10bb4"}}) {
+  allMdx(filter: {frontmatter: {title: {eq: "About"}}}) {
     edges {
       node {
         fields {
