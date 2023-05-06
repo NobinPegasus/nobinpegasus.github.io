@@ -240,15 +240,6 @@
   Link: </component---src-pages-about-mdx-70e4644f8b94a2039ae1.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/about/page-data.json>; rel=preload; as=fetch; crossorigin
-/books/
-  Link: </webpack-runtime-d22cf2bb5acb0f5e1dac.js>; rel=preload; as=script
-  Link: </framework-e65ce11b871bf77a3d80.js>; rel=preload; as=script
-  Link: </app-6087a04b0234b9dc9fef.js>; rel=preload; as=script
-  Link: </cb1608f2-218510d208b0de97d0f0.js>; rel=preload; as=script
-  Link: </8aaab75a216346816f0e302d304a66223df18b98-52025ba470b38cf236c6.js>; rel=preload; as=script
-  Link: </component---src-pages-books-mdx-f586abd6a7610a9ee4f5.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/books/page-data.json>; rel=preload; as=fetch; crossorigin
 /credits/
   Link: </webpack-runtime-d22cf2bb5acb0f5e1dac.js>; rel=preload; as=script
   Link: </framework-e65ce11b871bf77a3d80.js>; rel=preload; as=script
@@ -258,3 +249,12 @@
   Link: </component---src-pages-credits-mdx-37becd9b48f02cbf73d8.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/credits/page-data.json>; rel=preload; as=fetch; crossorigin
+/books/
+  Link: </webpack-runtime-d22cf2bb5acb0f5e1dac.js>; rel=preload; as=script
+  Link: </framework-e65ce11b871bf77a3d80.js>; rel=preload; as=script
+  Link: </app-6087a04b0234b9dc9fef.js>; rel=preload; as=script
+  Link: </cb1608f2-218510d208b0de97d0f0.js>; rel=preload; as=script
+  Link: </8aaab75a216346816f0e302d304a66223df18b98-52025ba470b38cf236c6.js>; rel=preload; as=script
+  Link: </component---src-pages-books-mdx-f586abd6a7610a9ee4f5.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/books/page-data.json>; rel=preload; as=fetch; crossorigin
