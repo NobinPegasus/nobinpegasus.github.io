@@ -88,6 +88,9 @@ const Search = () => {
                 value={query}
                 onChange={handleUserInput}
                 ref={inputRef}
+                onFocus={(e) => (e.target.placeholder = '')}
+                onBlur={(e) => (e.target.placeholder = 'Search using English keywords')}
+                placeholder="Search using English keywords" 
                 style={{ boxSizing: 'border-box' }}
               />
               {!index && <Loader />}

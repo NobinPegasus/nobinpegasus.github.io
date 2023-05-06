@@ -8,7 +8,7 @@ export default {
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/assets/bg/bg.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg/bg3.jpg', // default post background header
-  favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
+  favicon: 'src/N.png', // Your image for favicons. You can find it in the /src folder
   siteDescription: 'Low Level Systems Enthusiast', // Your site description
   author: 'Zeshan Ahmed Nobin', // Author for schemaORGJSONLD
   siteLogo: '/assets/home.png', // Image for schemaORGJSONLD
