@@ -1,4 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /404
 
-sitemap: https://nobinpegasus.github.io/sitemap.xml
+sitemap: https://nobinpegasus.github.io/sitemap/sitemap-0.xml
+Host: https://nobinpegasus.github.io
+
+

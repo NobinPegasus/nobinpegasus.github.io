@@ -43,6 +43,7 @@
     "canvas": "^2.11.2",
     "elasticlunr": "^0.9.5",
     "gatsby": "^4.10.1",
+    "gatsby-plugin-google-gtag": "^5.10.0",
     "gatsby-plugin-root-import": "^2.0.8",
     "lodash": "^4.17.11",
     "moment": "^2.29.1",

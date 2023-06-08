@@ -54,6 +54,10 @@ const HomePage = (props: Props) => {
 // eslint-disable-next-line import/no-default-export
 export default HomePage
 
+export const Head = () => (
+  <SEO />
+)
+
 // export const query = graphql`
 //   query {
 //     allMdx(

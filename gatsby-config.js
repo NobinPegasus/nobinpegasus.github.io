@@ -112,6 +112,23 @@ module.exports = {
     'gatsby-plugin-root-import',
     '@syed-ahmed/docusaurus-plugin-react-pdf',
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-E8N92RDJQ3", // Google Analytics / GA
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         // NOTE: The feeds don't work in the development environment, only in the build env.

@@ -67,7 +67,7 @@ export const SEO = (props: SEOProps) => {
           image: 'https://static.ashfurrow.com/ashfurrow_thumbsup_square.jpeg',
           sameAs: [
             'https://twitter.com/zeshan_nobin',
-            'https://linkedin.com/zeshanahmednobin',
+            'https://linkedin.com/in/zeshanahmednobin',
             'https://github.com/nobinpegasus'
           ]
         },
