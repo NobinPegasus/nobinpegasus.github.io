@@ -4,7 +4,7 @@ export default {
 
   siteTitle: 'NobinPegasus', // Navigation and Site Title
   siteTitleAlt: 'NobinPegasus – Low Level Systems Enthusiast', // Alternative Site title for SEO
-  siteUrl: 'https://nobinpegasus.com', // Domain of your site. No trailing slash!
+  siteUrl: 'https://nobinpegasus.github.io', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/assets/bg/bg.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg/bg3.jpg', // default post background header
