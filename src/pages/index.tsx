@@ -19,7 +19,10 @@ const HomePage = (props: Props) => {
 
   return (
     <Layout>
-      <Helmet title={`Blog | ${config.siteTitle}`} />
+      <Helmet>
+        <title>{`Blog | ${config.siteTitle}`}</title>
+        <meta name="msvalidate.01" content="87718E2850BE4D9DEF5A7E5F08938B6F"/>
+      </Helmet> 
       <SEO path="/" data={{ title: config.siteTitleAlt }} />
       <Header>
         <SectionTitle>
