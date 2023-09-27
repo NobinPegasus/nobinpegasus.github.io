@@ -104,7 +104,10 @@ const PostPage = (props: Props) => {
               </PostContent>
               <hr style={{ margin: '0' }} />
               <TypoLink onClick={sendEmail}>
-                Please submit corrections on email
+                Please submit corrections on email by pressing here. Or
+              </TypoLink>
+              <TypoLink>
+                Email me at zeshanahmednobin@gmail.com using Subject: Blog(Suggestion/Corrections)
               </TypoLink>
               <PrevNext prev={prev} next={next} />
             </Content>
