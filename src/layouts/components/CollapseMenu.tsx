@@ -31,6 +31,11 @@ export const CollapseMenu: React.FC<{
               </Link>
             </li>
             <li>
+              <Link to="/publications" onClick={toggleMenuOpen}>
+                Publications
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" onClick={toggleMenuOpen}>
                 Contact
               </Link>

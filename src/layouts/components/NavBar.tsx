@@ -64,6 +64,11 @@ export const Navbar = (props: Props) => {
               </Link>
             </li>
             <li>
+              <Link to="/publications">
+                Publications
+              </Link>
+            </li>
+            <li>
               <Link to="/contact">Contact</Link>
             </li>
             <li>
