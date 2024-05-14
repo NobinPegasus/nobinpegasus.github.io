@@ -59,7 +59,7 @@ const _Contact: React.FC = () => (
         <BigFAIcon>
           <FooterLink
             href="https://github.com/nobinpegasus"
-            title="GitHub"
+            title="Zeshan Ahmed Nobin"
             rel="me"
           >
             <FontAwesomeIcon icon={faGithub} />
