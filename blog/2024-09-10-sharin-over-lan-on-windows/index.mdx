@@ -1,0 +1,145 @@
+---
+title: Sharing folder/files over LAN on windows
+date: 2024-09-10
+banner: background.webp
+bannerAttribution: 
+---
+Today I'm gonna discuss about file transfer. If you don't have external ssd or hdd, transferring larger files can be hectic (specially when both the pcs are windows pcs)
+.I'm going to share some of the tactics that might help you lessen the hastle.
+
+### Using Python http server
+
+First install python on the pc you want to share the files from,
+[Python downloads](https://www.python.org/downloads/). 
+Go to the directory where the folder/file you want to share folder/file resides. Now open the powershell in the respective drive or navigate to that directory. Now use the following command to spawn a http server. Use `shift+right click`, `open powershell here`. Or open a powershell, and use `cd [folder path]`.
+
+![](1.png)
+
+
+```
+python -m http.server
+```
+or
+```
+python3 -m http.server
+```
+
+Then a python server will already be running on the directory, you wrote the command from.
+![](2.png)
+
+Now let's find the local ip address assinged to the same pc where the server was spawned.
+```
+ipconfig
+```
+![](3.png) 
+
+Put the IPv4 address on another PCs browser and also use the port. The default port for python http.server is `8000`.
+
+![](4.png)
+
+Now just like any FTP server just navigate and click on the file you want to download.
+
+![](5.png)
+### Using Network and Sharing
+Do the following actions on both the PCs. Click on Network from file manager.
+
+![](6.png)
+
+Go to firewall & network protection. On public network turn off the firewall. 
+
+![](7.png)
+
+Go to `control pannel -> network and sharing center -> change advanced sharing settings`. Turn everything `on` except `Password protected sharing`.
+
+![](8.png)
+
+Right click on the folder you want to share, press properties. Go to the sharing, press share.
+
+![](new.png)
+
+Add `everyone` and give them `read/write` permissions. 
+
+![](10.png)
+
+![](11.png)
+
+![](12.png)
+
+Go to Advanced sharing..., goto permissions, on everyone, tick allow on full control, change and apply it. 
+
+![](13.png)
+
+![](14.png)
+
+![](15.png)
+
+From that image we can see the root directory name. Here it’s \\PEGASUS
+Put this name on the path field in the file manager.
+After pressing enter we found the shared folders.
+
+![](16.png)
+
+![](17.png)
+
+![](18.png)
+
+Now select a specific folder that I want to share and right click on it. Click Map Network Drive…
+Select a drive name. Tick connect using different credentials.
+
+![](19.png)
+
+Press finish and set username and password, which will be later used from another pc to connected to this PC over the network.
+Now from the other PC. Go to Networks, then on file paths put `\\PEGASUS`
+Press enter. `More choices -> Use a different account`. Put the previously put username and password, press ok.
+
+![](20.png)
+
+![](21.png)
+
+Voila! Now you are connected to your remote PC. Now you can see the shared folders from the different PC. Now you can copy the folder you want and paste it on your local directory.
+
+![](22.png)
+
+![](23.png)
+
+### Using *robocopy* to copy folders/files
+I created an empty folder where the files will be copied to. Turned sharing on in the previously mentioned way.
+
+![](24.png)
+
+![](25.png)
+
+![](9.png)
+
+Command:<br/>
+```
+net use [mapped drive name] [the shared folder path] /user:[username] [password]
+```
+Use the username and password you previously set.<br/>Example:
+```
+net use K: \\SANZU\New /user:test test
+```
+![](26.png)
+
+Command:
+```
+robocopy [source directory] [target directory] [file to be copied] [options]
+```
+
+Example:
+```
+robocopy D:\sanzu K:\ sanzu.rar /mt /z /j
+```
+![](27.png)
+
+![](28.png)
+
+### Additional commands
+If in case you get locked from the other PC to connect to the different PC.
+On the different PC open powershell as administrator. 
+```
+net user [username] /active:yes
+``` 
+Enter this command you will be unlocked.
+
+
