@@ -51,8 +51,13 @@ export const CollapseMenu: React.FC<{
               </a>
             </li>
             <li>
+              <a href="/blog" onClick={toggleMenuOpen}>
+                Blog
+              </a>
+            </li>
+            <li>
               <a href="/feed.xml" onClick={toggleMenuOpen}>
-                Blog Feed
+                Feed
               </a>
             </li>
           </NavLinks>
