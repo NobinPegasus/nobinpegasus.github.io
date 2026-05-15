@@ -25,11 +25,11 @@ export const CollapseMenu: React.FC<{
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/resume" onClick={toggleMenuOpen}>
                 Resume
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/publications" onClick={toggleMenuOpen}>
                 Publications
