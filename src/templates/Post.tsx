@@ -62,6 +62,12 @@ const TypoLink = styled.a`
   }
 `
 
+// Wraps the title text to force it to be dark, overriding any Header defaults
+const TitleText = styled.span`
+  color: #111111 !important;
+  display: block;
+`
+
 interface Props {
   data: {
     mdx: Post
@@ -86,7 +92,8 @@ const PostPage = (props: Props) => {
             left
           >
             <SectionTitle left>
-              {post.frontmatter.title}
+              {/* Wrapped the title in TitleText to make it dark */}
+              <TitleText>{post.frontmatter.title}</TitleText>
               <Line />
               <SectionSubTitle left>
                 <Date dateTime={post.frontmatter.standardDate}>
@@ -121,15 +128,18 @@ const PostPage = (props: Props) => {
 // eslint-disable-next-line import/no-default-export
 export default PostPage
 
+// Changed from color: white to a dark background
 const Line = styled.hr`
-  color: white;
+  background-color: #111111; 
   width: 5rem;
   margin: 0.5rem 0;
   height: 3px;
+  border: none;
 `
 
+// Changed from color: white to a dark readable grey tone
 const Date = styled.time`
-  color: white;
+  color: #7a7369; 
   clear: both;
   font-family: ${config.headerFontFamily};
 `

@@ -10,16 +10,18 @@ interface GeneralPageProps {
 }
 
 interface SEOProps {
-  data: Post | GeneralPageProps
+  data?: Post | GeneralPageProps  // ← made optional
   path: string
 }
 
-function isPost(data: Post | GeneralPageProps): data is Post {
-  return 'excerpt' in data
+function isPost(data: Post | GeneralPageProps | undefined): data is Post {
+  return !!data && 'excerpt' in data  // ← guarded against undefined
 }
 
 export const SEO = (props: SEOProps) => {
   const { data, path } = props
+  if (!data) return null  // ← early exit if no data
+
   let title
   let description
   let image
@@ -121,11 +123,10 @@ export const SEO = (props: SEOProps) => {
       <meta name="twitter:url" content={config.siteUrl} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      {/* This is duplicated from react-helmet but it still works so :shrug: See: https://github.com/gatsbyjs/gatsby/issues/25636 */}
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-      ></meta>
+      />
       <link
         rel="alternate"
         type="application/rss+xml"

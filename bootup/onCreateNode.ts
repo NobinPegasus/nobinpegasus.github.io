@@ -15,7 +15,7 @@ const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions }) => {
   ) {
     const relativePath = (node.fileAbsolutePath as string).replace(repoPath, '')
     const githubLink = `https://github.com/nobinpegasus/blog/tree/main${relativePath}`
-    const frontmatter = node.frontmatter as Frontmatter
+    const frontmatter = node.frontmatter as unknown as Frontmatter
     const path = generatePath(frontmatter.title)
     createNodeField({ node, name: 'path', value: path })
     createNodeField({ node, name: 'githubLink', value: githubLink })

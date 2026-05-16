@@ -1,5 +1,5 @@
 interface Frontmatter {
-  date: string
+  date?: string
   formattedDate?: string
   standardDate?: string
   title: string

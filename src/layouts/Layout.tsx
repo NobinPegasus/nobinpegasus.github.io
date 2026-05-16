@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { faCircle, faImage } from '@fortawesome/free-solid-svg-icons'
 import { Navbar } from 'layouts/components'
+import Helmet from 'react-helmet'
 
 const GlobalStyle = createGlobalStyle`
   ::selection {
@@ -240,6 +241,16 @@ export const Layout = (props: React.PropsWithChildren<{}>) => {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
+        {/* Load fonts globally so they persist across page transitions */}
+        <Helmet>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;800&display=swap"
+            rel="stylesheet"
+          />
+        </Helmet>
+        
         <Navbar menuIsOpen={navBarOpen} toggleMenuOpen={toggleMenuOpen} />
         <GlobalStyle />
         {children}

@@ -35,7 +35,7 @@ const Contact = () => {
           description: "NobinPegasus's Professional Portfolio"
         }}
       />
-      <Header banner="/assets/contact3.jpg">
+      <Header>
         <SectionTitle>Contact</SectionTitle>
       </Header>
       <Wrapper>
@@ -219,9 +219,10 @@ const Footer = styled.footer`
 `
 
 const FooterLink = styled.a`
-  color: ${theme.colors.grey.default};
+  color: #7a7060;
+  transition: color 0.15s ease;
   &:hover {
-    color: ${theme.colors.primary};
+    color: #c8a97e;
   }
 `
 

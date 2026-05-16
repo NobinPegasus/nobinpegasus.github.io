@@ -3,13 +3,13 @@ export default {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
   siteTitle: 'NobinPegasus', // Navigation and Site Title
-  siteTitleAlt: 'NobinPegasus – Low Level Systems Enthusiast', // Alternative Site title for SEO
+  siteTitleAlt: 'NobinPegasus – Founder', // Alternative Site title for SEO
   siteUrl: 'https://nobinpegasus.github.io', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteBanner: '/assets/bg/bg.jpg', // Your image for og:image tag. You can find it in the /static folder
-  defaultBg: '/assets/bg/bg3.jpg', // default post background header
+  defaultBg: '', // default post background header
   favicon: 'src/N.png', // Your image for favicons. You can find it in the /src folder
-  siteDescription: 'Low Level Systems Enthusiast', // Your site description
+  siteDescription: 'Founder | Paller Scholar', // Your site description
   author: 'Zeshan Ahmed Nobin', // Author for schemaORGJSONLD
   siteLogo: '/assets/home.png', // Image for schemaORGJSONLD
 

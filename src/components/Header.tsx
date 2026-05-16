@@ -1,104 +1,153 @@
 import React from 'react'
-import styled from 'styled-components'
-import rgba from 'polished/lib/color/rgba'
+import styled, { keyframes } from 'styled-components'
 import { media } from 'utils/media'
 import config from 'config/siteConfig'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faImage } from '@fortawesome/free-solid-svg-icons'
 
-const HeaderWrapper: any = styled.header<{
-  banner: string
-  left?: boolean
-}>`
-  display: block;
-  clear: both;
+// ─── Animations ───────────────────────────────────────────────────────────────
+
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+`
+
+const scanline = keyframes`
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+`
+
+// ─── Styled Components ────────────────────────────────────────────────────────
+
+const HeaderWrapper = styled.header<{ left?: boolean }>`
   position: relative;
-  /* Abusing linear-gradient for a constant dim effect. */
-  background: linear-gradient(
-      ${() => rgba(0, 0, 0, 0.2)},
-      ${() => rgba(0, 0, 0, 0.2)}
-    ),
-    url(${({ banner }) => banner}) no-repeat black;
-  background-size: cover;
-  text-align: ${({ left }) => (left ? 'left' : 'center')};
+  background: transparent;
+  text-align: ${({ left }) => (left ? 'left' : 'left')};
   z-index: 5;
+  margin-top: 3.2rem; /* navbar height */
+  overflow: hidden;
 
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  @media ${media.tablet} {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+  /* subtle scanline sweep */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 40px;
+    background: linear-gradient(
+      to bottom,
+      rgba(200, 169, 126, 0.03),
+      transparent
+    );
+    animation: ${scanline} 6s linear infinite;
+    pointer-events: none;
   }
+`
+
+const Terminal = styled.div`
+  border-bottom: 1px solid #1e1c18;
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
   @media ${media.phone} {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 0.5rem 1rem;
   }
 `
 
-const ContentWrapper = styled.div<{ left?: boolean }>`
-  margin: 0 auto;
-  width: 66.6%;
+const Dots = styled.div`
+  display: flex;
+  gap: 0.3rem;
+  flex-shrink: 0;
 
-  @media ${media.tablet} {
-    width: 83.3%;
-  }
-  @media ${media.phone} {
-    width: initial;
+  span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+
+    &:nth-child(1) { background: #3d3a32; }
+    &:nth-child(2) { background: #3d3a32; }
+    &:nth-child(3) { background: #3d3a32; }
   }
 `
 
-const Content = styled.div<{ left?: boolean }>`
-  position: relative;
-  a {
-    color: white;
-    &:hover {
-      opacity: 0.85;
-      color: white;
-    }
-  }
-
-  margin: 3rem 4rem;
-  @media ${media.tablet} {
-    margin: 2rem 2rem;
-  }
-  @media ${media.phone} {
-    margin: 0rem 1rem;
-  }
+const Prompt = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', ${config.headerFontFamily}, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  overflow: hidden;
 `
 
-const AttributionLink = styled.a`
-  text-decoration: none;
-  position: absolute;
-  bottom: 0;
-  right: env(safe-area-inset-right);
-  color: rgba(255, 255, 255, 0.5);
-  padding-right: 1.25em;
-  padding-bottom: 1.25em;
+const PromptUser = styled.span`
+  color: #7a7060;
 `
+
+const PromptPath = styled.span`
+  color: #3d3a32;
+`
+
+const PromptTitle = styled.span`
+  color: #c8a97e;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+`
+
+const Cursor = styled.span`
+  display: inline-block;
+  width: 7px;
+  height: 0.85em;
+  background: #c8a97e;
+  opacity: 0.7;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: ${blink} 1.2s step-end infinite;
+`
+
+const Eyebrow = styled.span`
+  font-family: 'JetBrains Mono', ${config.headerFontFamily}, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3d3a32;
+  margin-left: auto;
+  flex-shrink: 0;
+
+  @media ${media.phone} { display: none; }
+`
+
+// ─── Component ────────────────────────────────────────────────────────────────
 
 interface Props {
   children: any
   banner?: string
   bannerAttribution?: string
   left?: boolean
+  eyebrow?: string
 }
 
-export const Header = ({
-  banner,
-  bannerAttribution,
-  left,
-  children
-}: Props) => {
+export const Header = ({ children, eyebrow }: Props) => {
+  // Extract text from children (SectionTitle renders an h1/h2/div)
+  const label = typeof children === 'string'
+    ? children
+    : children?.props?.children ?? ''
+
   return (
-    <HeaderWrapper banner={banner || config.defaultBg} left={left}>
-      {bannerAttribution && (
-        <AttributionLink href={bannerAttribution}>
-          <FontAwesomeIcon icon={faImage} />
-        </AttributionLink>
-      )}
-      <ContentWrapper left={left}>
-        <Content left={left}>{children}</Content>
-      </ContentWrapper>
+    <HeaderWrapper>
+      <Terminal>
+        <Dots>
+          <span /><span /><span />
+        </Dots>
+        <Prompt>
+          <PromptUser>nobin</PromptUser>
+          <PromptPath>~/</PromptPath>
+          <PromptTitle>{label}</PromptTitle>
+          <Cursor />
+        </Prompt>
+        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+      </Terminal>
     </HeaderWrapper>
   )
 }
