@@ -38,6 +38,7 @@ export const Navbar = (props: Props) => {
             <li><Link to="/publications">Publications</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/credits">Credits</Link></li>
+            <li><Link to="/meet">Let's Meet</Link></li>
 
             {/* Dhaka Finder */}
             <li>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { Wrapper, SEO } from 'components'
 import { Layout } from 'layouts'
 import Helmet from 'react-helmet'
 import config from 'config/siteConfig'
 import Data from 'models/Data'
 import styled, { keyframes } from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Wrapper, SEO, MeetScheduler } from 'components'
 
 interface Props {
   data: Data
@@ -61,6 +61,8 @@ const HomePage = (props: Props) => {
             </AboutBody>
           ))}
         </AboutSection>
+
+        <MeetScheduler />
 
         {/* ── Footer strip ── */}
         <FooterStrip>

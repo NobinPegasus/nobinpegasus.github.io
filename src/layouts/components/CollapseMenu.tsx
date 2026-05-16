@@ -18,6 +18,7 @@ export const CollapseMenu: React.FC<{
           <li><Link to="/publications" onClick={toggleMenuOpen}>Publications</Link></li>
           <li><Link to="/contact"      onClick={toggleMenuOpen}>Contact</Link></li>
           <li><Link to="/credits"      onClick={toggleMenuOpen}>Credits</Link></li>
+          <li><Link to="/meet" onClick={toggleMenuOpen}>Let's Meet</Link></li>
           <li>
             <DhakaFinderBtn to="/dhaka-finder" onClick={toggleMenuOpen}>
               Dhaka Finder ✨
